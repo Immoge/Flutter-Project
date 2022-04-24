@@ -143,12 +143,12 @@ class _CryptoGridState extends State<CryptoGrid> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Text("Currency Name"),
+              const Text("Currency Name",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const Icon(
                 Icons.fact_check_rounded,
                 size: 64,
               ),
-              Text(widget.curCrypto.currencyName)
+              Text(widget.curCrypto.currencyName,style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))
             ],
           ),
           color: Colors.greenAccent,
@@ -158,12 +158,12 @@ class _CryptoGridState extends State<CryptoGrid> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Text("Unit"),
+              const Text("Unit",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const Icon(
                 Icons.currency_exchange_sharp,
                 size: 64,
               ),
-              Text(widget.curCrypto.unit)
+              Text(widget.curCrypto.unit,style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))
             ],
           ),
           color: Colors.greenAccent,
@@ -173,12 +173,12 @@ class _CryptoGridState extends State<CryptoGrid> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Text("Value"),
+              const Text("Value",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const Icon(
                 Icons.attach_money,
                 size: 64,
               ),
-              Text(widget.curCrypto.value.toString()),
+              Text(widget.curCrypto.value.toString(),style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
             ],
           ),
           color: Colors.greenAccent,
@@ -188,12 +188,12 @@ class _CryptoGridState extends State<CryptoGrid> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Text("Type"),
+              const Text("Type",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const Icon(
                 Icons.loop_outlined,
                 size: 64,
               ),
-              Text(widget.curCrypto.type)
+              Text(widget.curCrypto.type,style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
             ],
           ),
           color: Colors.greenAccent,
