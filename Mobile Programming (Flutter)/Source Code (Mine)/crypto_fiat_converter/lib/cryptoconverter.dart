@@ -21,9 +21,9 @@ class CryptoConverterScreen extends StatelessWidget {
                 height: 200,
                 child: Center(
                   child: Image.asset('assets/images/Crypto Converter Logo.png',
-                      scale: 4),
+                      scale: 3),
                 )),
-            Container(height: 300, child: CryptoConverter()),
+            Container(height: 700, child: CryptoConverter()),
           ]),
         ),
       ),
@@ -40,7 +40,7 @@ class CryptoConverter extends StatefulWidget {
 }
 
 class _CryptoConverterState extends State<CryptoConverter> {
-  String selectedCrypto = "btc", description = "No information";
+  String selectedCrypto = "btc";
   Crypto curCrypto =
       Crypto("Not Availabe", "Not Avaliable", 0.0, "Not Avaliable");
   var currencyName, unit, value, type;
@@ -60,22 +60,23 @@ class _CryptoConverterState extends State<CryptoConverter> {
           children: [
             const Text(
               "Please Select:",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             DropdownButton(
-              itemHeight: 60,
+              
+              itemHeight: 50,
               value: selectedCrypto,
               onChanged: (newValue) {
                 setState(() {
                   selectedCrypto = newValue.toString();
                 });
               },
-              items: cryptoList.map((selectLoc) {
+              items: cryptoList.map((selectedCrypto) {
                 return DropdownMenuItem(
                   child: Text(
-                    selectLoc,
+                    selectedCrypto, style: TextStyle(fontSize:18)
                   ),
-                  value: selectLoc,
+                  value: selectedCrypto,
                 );
               }).toList(),
             ),
@@ -86,10 +87,7 @@ class _CryptoConverterState extends State<CryptoConverter> {
                     primary: Colors.greenAccent,
                     textStyle:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold))),
-            Text(
-              description,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
-            ),
+                Expanded(child: CryptoGrid(curCrypto: curCrypto,),), 
           ],
         )));
   
@@ -111,6 +109,7 @@ class _CryptoConverterState extends State<CryptoConverter> {
         value = parsedData['rates'][selectedCrypto]['value'];
         type = parsedData['rates'][selectedCrypto]['type'];
         curCrypto = Crypto(currencyName, unit, value, type);
+        
       });
       progressDialog.dismiss();
       Fluttertoast.showToast(
@@ -122,11 +121,9 @@ class _CryptoConverterState extends State<CryptoConverter> {
     }
   }
 }
-
 class CryptoGrid extends StatefulWidget {
   final Crypto curCrypto;
   const CryptoGrid({Key? key, required this.curCrypto}) : super(key: key);
-
   @override
   State<CryptoGrid> createState() => _CryptoGridState();
 }
@@ -203,6 +200,6 @@ class _CryptoGridState extends State<CryptoGrid> {
         ),
       ],
     );
+    
   }
-  
 }
