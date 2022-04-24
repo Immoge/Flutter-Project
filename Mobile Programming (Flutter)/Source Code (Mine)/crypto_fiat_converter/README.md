@@ -1,4 +1,4 @@
-# crypto_fiat_exchanger
+# crypto_fiat_converter
 
 A new Flutter project.
 
