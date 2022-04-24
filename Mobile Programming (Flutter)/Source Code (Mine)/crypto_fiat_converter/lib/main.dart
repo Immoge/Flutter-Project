@@ -16,8 +16,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class SplashPage extends StatefulWidget {
-  const SplashPage({ Key? key }) : super(key: key);
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
   _SplashPageState createState() => _SplashPageState();
@@ -25,19 +26,19 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   @override
-  void initState(){
-  super.initState();
-  Timer(
-    const Duration (seconds: 3),
-    () => Navigator.pushReplacement(
-      context, MaterialPageRoute(builder: (context) => CryptoConverterScreen()));
-  }  
+  void initState() {
+    super.initState();
+    Timer(
+        const Duration(seconds: 3),
+        () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => CryptoConverterScreen())));
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Image.asset('assets/images/Crypto Converter Logo.png', scale: 3),
-       ),
+        child: Image.asset('assets/images/Crypto Converter Logo.png', scale: 2.5),
+      ),
     );
   }
 }
