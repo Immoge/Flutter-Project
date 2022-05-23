@@ -125,7 +125,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: TextFormField(
                           controller: phoneController,
                           decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.email_outlined),
+                              prefixIcon: const Icon(Icons.local_phone_outlined),
                               labelText: "Phone Number",
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(5.0))),
