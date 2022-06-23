@@ -424,6 +424,7 @@ class _RegisterPageState extends State<RegisterPage> {
             timeInSecForIosWeb: 1,
             fontSize: 14.0);
         return;
+        print (response);
       }
     });
   }
